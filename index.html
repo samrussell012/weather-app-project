@@ -33,14 +33,25 @@
         <div class="current-weather">
           <h1 id="city">Sydney</h1>
           <h2 class="current-date" id="date">Wednesday 7/12</h2>
-          <h2 class="current-forecast">Partly Cloudy</h2>
+          <h2 class="current-forecast" id="current-forecast">Partly Cloudy</h2>
         </div>
         <div class="row weekly-forecast">
           <div class="col-6">
             <div class="clearfix">
               <div class="float-left">
-                <span class="temperature" id="temperature">22</span
-                ><span class="units">°C</span>
+                <span class="icon">
+                  <img src="#" alt="Clear sky" id="icon" />
+                </span>
+                <span class="temperature" id="temperature">22</span>
+                <span class="units">
+                  <span class="celsius" id="celsius-link"
+                    ><a href="">°C</a></span
+                  >
+                  |
+                  <span class="fahrenheit" id="fahrenheit-link"
+                    ><a href="">°F</a></span
+                  >
+                </span>
               </div>
             </div>
           </div>

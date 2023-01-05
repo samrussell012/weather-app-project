@@ -53,3 +53,7 @@ h5 {
 footer {
   text-align: center;
 }
+
+.current-forecast:first-letter {
+  text-transform: capitalize;
+}
