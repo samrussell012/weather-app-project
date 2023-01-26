@@ -31,7 +31,7 @@
         </div>
 
         <div class="current-weather">
-          <h1 id="city">Sydney</h1>
+          <h1 class="city" id="city">Sydney</h1>
           <h2 class="current-date" id="date">Wednesday 7/12</h2>
           <h2 class="current-forecast" id="current-forecast">Partly Cloudy</h2>
         </div>
@@ -55,136 +55,18 @@
               </div>
             </div>
           </div>
-
           <div class="col-6">
             <h2>Humidity: <span id="humidity">49</span>%</h2>
             <h2>Wind: <span id="wind">18</span>km/h</h2>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col">
-            <div class="card text-center">
-              <div class="card-body">
-                <h5 class="card-title">THU</h5>
-                <p class="card-text">
-                  8/12
-                  <br />
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                    class="card-img-top"
-                    alt="cloudy icon"
-                  />
-                  <br />
-                  20°C
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card text-center">
-              <div class="card-body">
-                <h5 class="card-title">FRI</h5>
-                <p class="card-text">
-                  9/12
-                  <br />
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                    class="card-img-top"
-                    alt="cloudy icon"
-                  />
-                  <br />
-                  19°C
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card text-center">
-              <div class="card-body">
-                <h5 class="card-title">SAT</h5>
-                <p class="card-text">
-                  10/12
-                  <br />
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                    class="card-img-top"
-                    alt="cloudy icon"
-                  />
-                  <br />
-                  21°C
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card text-center">
-              <div class="card-body">
-                <h5 class="card-title">SUN</h5>
-                <p class="card-text">
-                  11/12
-                  <br />
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                    class="card-img-top"
-                    alt="cloudy icon"
-                  />
-                  <br />
-                  27°C
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card text-center">
-              <div class="card-body">
-                <h5 class="card-title">MON</h5>
-                <p class="card-text">
-                  12/12
-                  <br />
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                    class="card-img-top"
-                    alt="cloudy icon"
-                  />
-                  <br />
-                  28°C
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card text-center">
-              <div class="card-body">
-                <h5 class="card-title">TUE</h5>
-                <p class="card-text">
-                  13/12
-                  <br />
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                    class="card-img-top"
-                    alt="cloudy icon"
-                  />
-                  <br />
-                  25°C
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="weather-forecast" id="daily-forecast"></div>
       </div>
-    </div>
     <footer>
       <a
         href="https://github.com/samrussell012/weather-app-project"
         target="_blank"
-        >Open-source code</a
-      >
+        >Open-source code</a>
       by Sam Russell
     </footer>
     <script src="src/app.js"></script>

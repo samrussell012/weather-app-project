@@ -17,11 +17,6 @@ h2 {
   line-height: 1;
 }
 
-h5 {
-  font-weight: 700;
-  font-size: 16px;
-}
-
 .search-bar {
   margin: 20px;
 }
@@ -56,4 +51,47 @@ footer {
 
 .current-forecast:first-letter {
   text-transform: capitalize;
+}
+
+.icon {
+  position: relative;
+  top: -20px;
+}
+
+.weather-forecast-day {
+  font-size: 16px;
+  text-align: center;
+}
+
+.weather-forecast {
+  margin-top: 20px;
+}
+
+.weather-forecast-temperature {
+  font-size: 13px;
+  text-align: center;
+}
+
+.daily-forecast {
+  text-align: center;
+}
+
+.forecast-image {
+  display: block;
+  margin: 0 auto;
+}
+
+.city {
+  position: relative;
+  left: 20px;
+}
+
+.current-date {
+  position: relative;
+  left: 20px;
+}
+
+.current-forecast {
+  position: relative;
+  left: 20px;
 }

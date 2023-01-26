@@ -34,6 +34,15 @@ function formatDate(date) {
   return `${dayIndex} ${currentDate}/${month}`;
 }
 
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayWeatherCondition(response) {
   celsiusTemperature = response.data.temperature.current;
 
@@ -55,6 +64,8 @@ function displayWeatherCondition(response) {
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.condition.description);
+
+  getForecast(response.data.city);
 }
 
 function searchCity(city) {
@@ -84,6 +95,54 @@ function displayCelsiusTemperature(event) {
   fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function getForecast(city) {
+  let apiKey = "ad9ec42f104tb433904o587aca6051b1";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  let dailyForecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#daily-forecast");
+
+  let forecastHTML = `<div class="row">`;
+  dailyForecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+            <div class="col-2">
+              <div class="weather-forecast-day">${formatForecastDay(
+                forecastDay.time
+              )}</div>
+              <img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                  forecastDay.condition.icon
+                }.png"
+                alt=""
+                width="42"
+                class="forecast-image"
+              />
+              <div class="weather-forecast-temperature">${Math.round(
+                forecastDay.temperature.day
+              )}°</div>
+            </div>
+`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
